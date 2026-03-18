@@ -1,4 +1,4 @@
-# Exp No: 14b
+# Exp No: 14b  
 ## Circular Queue 
 ---
 
@@ -25,60 +25,53 @@ To write a Python program with a function to insert float values into a Circular
 ### PROGRAM
 
 ```
-Name : Trisha
-Reg No : 212223060280
+#Reg.NO 212222060280
+#Name Trisha
 class Queue:
-    def __init__(self, size):
-        self.items = [0] * size
-        self.max_size = size
-        self.head, self.tail, self.size = 0, 0, 0
-
-    def enqueue(self, item):
-        if self.is_list_full():
-            print(f'Queue is full')
-            return
-
-        #print(f'Inserting {item}')
-        self.items[self.tail] = item
-        self.tail = (self.tail + 1) % self.max_size
-        self.size += 1
-
+    def __init__(self,limit):
+        self.queue=[]
+        self.rear=0
+        self.front=0
+        self.limit=limit
+    def isempty(self):
+        if len(self.queue)==0:
+            return True
+        else:
+            return False
+    def enqueue(self,item):
+        if len(self.queue)==self.limit:
+            print("The queue is full")
+        else:
+            if self.front==self.limit:
+                self.front=self.rear-1
+            self.queue.insert(self.front,item)
+            self.front+=1
     def dequeue(self):
-        item = self.items[self.head]
-        self.head = (self.head + 1) % self.max_size
-        self.size -= 1
-
-        return item
-
-    def is_list_full(self):
-        if self.size == self.max_size:
-            return True
-        return False
-
-    def is_empty(self):
-        if self.size == 0:
-            return True
-        return False
-
+        if self.rear==self.limit:
+            self.rear=0
+        self.queue.pop(self.rear)
+        self.rear+=1
+    def display(self):
+        print(self.queue)
 size=int(input())
-queue = Queue(size)
-str=float(input())
-str1=float(input())
-str2=float(input())
-queue.enqueue(str)
-queue.enqueue(str1)
-queue.enqueue(str2)
+a=Queue(size)
+str=int(input())
+str1=int(input())
+str2=int(input())
+a.enqueue(str)
+a.enqueue(str1)
+a.enqueue(str2)
+a.display()
+a.dequeue()
+a.display()
 
-    
-print(queue.items)
-#print(queue.head)
-#print(queue.tail)
+
 
 ```
 
 ### OUTPUT
 
-<img width="678" height="346" alt="image" src="https://github.com/user-attachments/assets/b0e7e06b-1120-4ac9-924c-18a0c2b309f8" />
+<img width="820" height="329" alt="image" src="https://github.com/user-attachments/assets/f9d60abf-00e4-42de-b2c2-5f3f9dd2ed56" />
 
 ### RESULT
-Thus the Python program with a function to insert float values into a Circular Queue is implemented and executed successfully.
+Thus the Circular Queue is implemented and verified successfully.
