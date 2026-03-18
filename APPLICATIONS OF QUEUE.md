@@ -1,4 +1,4 @@
-# Exp.No:40  
+# Exp.No:14  
 ## APPLICATIONS OF QUEUE
 
 ---
@@ -32,8 +32,8 @@ To write a Python program to implement CPU Process Scheduling using a queue.
 ### PROGRAM  
 
 ```
-Name : Priyadharshika L
-Reg No: 212223060212
+Name : Trisha
+Reg No: 212223060280
 # Python3 program to Calculate Waiting
 # Time for given Processes
 
